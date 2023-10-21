@@ -6,15 +6,28 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        "color1A": "#4b5563",
+        "color1B": "#111827",
+        "color1C": "#374151",
+        "color1D": "#9ca3af",
+        "color1E": "#f9fafb",
+        "color1F": "#f3f4f6",
+        "color1G": "#d1d5db",
+        "color1H": "#6b7280",
+        "color1I": "#e5e7eb",
+
+        "color2A": "#ffffff",
+
+        "color3A": "#4f46e5",
+        "color3B": "#6366f1",
       },
     },
   },
-  plugins: [],
 }
 export default config

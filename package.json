@@ -1,27 +1,60 @@
 {
-  "name": "website-builder-lib",
-  "version": "0.1.0",
-  "private": true,
+  "name": "website-builder-lib-2",
+  "version": "0.1.40",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc --declaration --emitDeclarationOnly --outDir dist",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
+    "chromatic": "npx chromatic --project-token=chpt_189ab2b90d2c4b3",
+    "create-component": "npx plop component",
+    "update-lib": "npm run test-storybook && npm run build && npm publish"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@tailwindcss/forms": "^0.5.6",
+    "find-cache-dir": "^5.0.0",
+    "framer-motion": "^10.16.4",
+    "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.4"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@locofy/storybook-addon": "^0.3.4",
+    "@storybook/addon-a11y": "^7.4.6",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/nextjs": "^7.4.6",
+    "@storybook/react": "^7.4.6",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/find-cache-dir": "^5.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
-    "postcss": "^8",
-    "tailwindcss": "^3",
+    "axe-playwright": "^1.2.3",
+    "chromatic": "^7.2.3",
     "eslint": "^8",
-    "eslint-config-next": "13.5.4"
-  }
+    "eslint-config-next": "13.5.4",
+    "eslint-plugin-storybook": "^0.6.14",
+    "postcss": "^8",
+    "rimraf": "^5.0.5",
+    "storybook": "^7.4.6",
+    "storybook-zeplin": "^2.0.2",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "website-builder-lib-2@0.0.6"
 }
